@@ -1,4 +1,4 @@
-package com.structure;
+package com.structure.queue;
 
 public class QueueDemo {
 
