@@ -1,24 +1,5 @@
 package com.structure.linkedlist;
 
-public class SingleLinkedListDemo {
-
-    public static void main(String[] args) {
-        SingleLinkedList list = new SingleLinkedList();
-        Node node1 = new Node(1, "node1");
-        Node node2 = new Node(2, "node2");
-        Node node3 = new Node(3, "node3");
-        Node nodeInsert = new Node(2, "nodeInsert");
-        list.add(node1);
-        list.add(node2);
-        list.add(node3);
-        list.addByOrder(nodeInsert);
-        list.listAll();
-        // Node [no=1, name=node1]
-        // Node [no=2, name=nodeInsert]
-        // Node [no=3, name=node3]
-    }
-}
-
 class SingleLinkedList {
 
     private Node head = new Node(0, "head");
@@ -49,6 +30,40 @@ class SingleLinkedList {
         } else {
             node.next = temp.next;
             temp.next = node;
+        }
+    }
+
+    public void update(Node node) {
+        Node temp = head;
+        boolean exist = false;
+        while (temp.next != null) {
+            if (temp.next.no == node.no) {
+                exist = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (exist) {
+            temp.next.name = node.name;
+        } else {
+            System.out.println("Node no " + node.no + " not exist: ");
+        }
+    }
+
+    public void delete(int no) {
+        Node temp = head;
+        boolean exist = false;
+        while (temp.next != null) {
+            if (temp.next.no == no) {
+                exist = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (exist) {
+            temp.next = temp.next.next;
+        } else {
+            System.out.println("Node no " + no + " not exist: ");
         }
     }
 
