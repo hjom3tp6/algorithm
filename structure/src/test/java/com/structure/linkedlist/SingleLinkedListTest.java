@@ -41,4 +41,25 @@ public class SingleLinkedListTest {
         list.delete(1);
         list.listAll();
     }
+
+    @Test 
+    public void lengthTest() {
+        System.out.println("========length========");
+        int i = list.length();
+        System.out.println("Length = " + i);
+    }
+
+    @Test
+    public void findLastIndexNodeTest() {
+        System.out.println("========findLastIndexNode========");
+        Node node = list.findLastIndexNode(3);
+        System.out.println(node.name);
+    }
+
+    @Test
+    public void reverseTest() {
+        System.out.println("========reverse========");
+        list.reverse();
+        list.listAll();
+    }
 }
