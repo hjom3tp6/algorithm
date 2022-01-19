@@ -29,20 +29,25 @@ public class ArrayStack {
 
     public int pop() {
         if (isEmpty()) {
-            System.out.println("isEmpty");
-            return top;
+            throw new RuntimeException("isEmpty");
         }
         return stack[top--];
     }
 
     public void print() {
         if (isEmpty()) {
-            System.out.println("isEmpty");
-            return;
+            throw new RuntimeException("isEmpty");
         }
         for (int i = top; i >= 0; i--) {
             System.out.printf("index: %d, value = %d \n", i, stack[i]);
         }
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("isEmpty");
+        }
+        return stack[top];
     }
 
 }
