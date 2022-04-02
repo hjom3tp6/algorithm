@@ -11,6 +11,9 @@ public class QuickSortingDemo {
   }
 
   public static void sort(int[] arr, int left, int right) {
+    if (left >= right) {
+      return;
+    }
     int pivot = arr[(right + left) / 2];
     int l = left;
     int r = right;
@@ -32,16 +35,8 @@ public class QuickSortingDemo {
       r--;
     }
 
-    if (l == r) {
-      l++;
-    }
-
-    if (left < r) {
-      sort(arr, left, r);
-    }
-    if (l < right) {
-      sort(arr, l, right);
-    }
+    sort(arr, left, r);
+    sort(arr, r + 1, right);
   }
 
 }
