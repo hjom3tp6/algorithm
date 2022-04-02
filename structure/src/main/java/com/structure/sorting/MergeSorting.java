@@ -12,12 +12,11 @@ public class MergeSorting {
   }
 
   public static void sort(int[] arr, int left, int right, int[] temps) {
-    if (left < right) {
-      int mid = (left + right) / 2;
-      sort(arr, left, mid, temps);
-      sort(arr, mid + 1, right, temps);
-      merge(arr, left, mid, right, temps);
-    }
+    if (left >= right) return;
+    int mid = (left + right) / 2;
+    sort(arr, left, mid, temps);
+    sort(arr, mid + 1, right, temps);
+    merge(arr, left, mid, right, temps);
   }
 
   public static void merge(int[] arr, int left, int mid, int right, int[] temps) {
@@ -26,34 +25,22 @@ public class MergeSorting {
     int tempsIndex = 0;
     while (l <= mid && r <= right) {
       if (arr[l] < arr[r]) {
-        temps[tempsIndex] = arr[l];
-        l++;
-        tempsIndex++;
+        temps[tempsIndex++] = arr[l++];
       } else {
-        temps[tempsIndex] = arr[r];
-        tempsIndex++;
-        r++;
+        temps[tempsIndex++] = arr[r++];
       }
     }
-
     while (l <= mid) {
-      temps[tempsIndex] = arr[l];
-      tempsIndex++;
-      l++;
+      temps[tempsIndex++] = arr[l++];
     }
-
     while (r <= right) {
-      temps[tempsIndex] = arr[r];
-      r++;
-      tempsIndex++;
+      temps[tempsIndex++] = arr[r++]; 
     }
-
-    int tempL = left;
     tempsIndex = 0;
-    while (tempL <= right) {
-      arr[tempL] = temps[tempsIndex];
-      tempL++;
-      tempsIndex++;
+    l = left;
+    while(l <= right) {
+      arr[l++] = temps[tempsIndex++]; 
     }
   }
+
 }
