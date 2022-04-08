@@ -3,25 +3,45 @@ package com.algorithm.binarySearch;
 public class BinarySearchDemo {
 
   public static void main(String[] args) {
-    int[] arr = { 1, 8, 10, 89, 1000, 1234 };
-    int fidVal = 89;
-    int i = search(arr, fidVal);
+    int[] arr = { 1, 8, 10, 89, 89, 1000, 1234 };
+    int target = 89;
+    int i = searchFirst(arr, target);
     System.out.println(i); //
+    int j = searchLast(arr, target);
+    System.out.println(j);
 
   }
 
-  public static int search(int[] arr, int findVal) {
+  // binary search find the first one
 
-    int l = 0;
-    int r = arr.length -1;
-    while (l < r) {
-      int mid = (l + r) >> 1;
-      if (findVal <= arr[mid]) {
-        r = mid;
+  public static int searchFirst(int[] arr, int target) {
+    int left = 0;
+    int right = arr.length - 1;
+    while (left < right) {
+      int mid = ( left + right ) / 2;
+      if (target <= arr[mid]) {
+        right = mid;
       } else {
-        l = mid + 1;
+        left = mid + 1;
       }
     }
-    return arr[l] == findVal ? l : -1;
+    return left;
   }
+
+  // binary search find the last one
+  public static int searchLast(int[] arr, int target) {
+    int left = 0;
+    int right = arr.length - 1;
+    while ( left < right ) {
+      int mid = ( left + right + 1) / 2;
+      if ( target >= arr[mid] ) {
+        left = mid;
+      } else {
+        right = mid - 1;
+      }
+    }
+    return left;
+
+  }
+
 }
