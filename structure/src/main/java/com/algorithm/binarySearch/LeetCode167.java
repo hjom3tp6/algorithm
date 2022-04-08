@@ -15,7 +15,7 @@ public class LeetCode167 {
     int l = 0;
     int r = nums.length - 1;
     while (l < r) {
-      int mid = (l + r ) >> 1;
+      int mid = (l + r ) / 2;
       if (target <= nums[mid]) {
         r = mid;
       } else {
@@ -26,7 +26,7 @@ public class LeetCode167 {
     int lV = 0;
     int rV = nums.length - 1;
     while (lV < rV) {
-      int mid = lV + rV + 1 >>> 1;
+      int mid = (lV + rV + 1 ) / 2;
       if (target >= nums[mid]) {
         lV = mid;
       } else {
