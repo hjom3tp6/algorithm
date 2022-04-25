@@ -20,31 +20,32 @@ public class LeetCode_34 {
     if (nums.length == 0) {
       return new int[] { -1, -1 };
     }
-    int l = 0;
-    int r = nums.length - 1;
-    while (l < r) {
-      int mid = (l + r) / 2;
+    int left = 0, right = nums.length - 1;
+    while (left < right) {
+      int mid = (left + right) / 2;
       if (target <= nums[mid]) {
-        r = mid;
+        right = mid;
       } else {
-        l = mid + 1;
-      }
-    }
-    if (nums[l] != target) {
-      return new int[] { -1, -1 };
-    }
-    int lV = l;
-    int rV = nums.length - 1;
-    while (lV < rV) {
-      int mid = (lV + rV + 1) / 2;
-      if (target >= nums[mid]) {
-        lV = mid;
-      } else {
-        rV = mid - 1;
+        left = mid + 1;
       }
     }
 
-    return new int[] { l, lV };
+    if (target != nums[left]) {
+      return new int[] { -1, -1 };
+    }
+
+    int l = left;
+    right = nums.length - 1;
+    while (left < right) {
+      int mid = (left + right + 1) / 2;
+      if (target >= nums[mid]) {
+        left = mid;
+      } else {
+        right = mid - 1;
+      }
+    }
+
+    return new int[] { l, left };
   }
 
 }
