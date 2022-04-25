@@ -1,6 +1,11 @@
 package com.algorithm.binarySearch;
 
 public class Leetcode162 {
+
+  /**
+   * https://leetcode.com/problems/find-peak-element/solution/
+   * @param args
+   */
   public static void main(String[] args) {
     int[] nums1 = { 1, 2, 3, 1 };
     System.out.println(binarySearch(nums1)); // 2
@@ -15,6 +20,18 @@ public class Leetcode162 {
       }
     }
     return nums.length - 1;
+  }
+
+  public static int binarySearchRecursive(int[] nums, int left, int right) {
+    if (left >= right) {
+      return left;
+    }
+    int mid = (left + right) / 2;
+    if (nums[mid] > nums[mid + 1]) {
+      return binarySearchRecursive(nums, left, mid);
+    } else {
+      return binarySearchRecursive(nums, mid + 1, right);
+    }
   }
 
   public static int binarySearch(int[] nums) {
