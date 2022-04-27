@@ -1,5 +1,8 @@
 package com.algorithm.binarySearch;
 
+/**
+ * https://leetcode.com/problems/sqrtx/
+ */
 public class Leetcode69 {
 
   public static void main(String[] args) {
@@ -17,7 +20,7 @@ public class Leetcode69 {
     int right = num;
     while (left < right) {
       int mid = (left + right + 1) >> 1;
-      if (mid * mid <= num) {
+      if ( mid  <=  num / mid) {
         left = mid;
       } else {
         right = mid - 1;
