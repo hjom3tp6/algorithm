@@ -21,4 +21,14 @@ public class Leetcode_26 {
         }
         return j;
     }
+
+    public static int removeDuplicates_2(int[] nums) {
+        int i = 0;
+        for (int num : nums) {
+            if ( i == 0 || i != nums[i-1]) {
+                nums[i++] = num;
+            }
+        }
+        return i;
+    }
 }
