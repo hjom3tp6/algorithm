@@ -15,7 +15,7 @@ public class Leetcode_169 {
   public static void main(String[] args) {
     int[] nums = { 2, 2, 1, 1, 1, 2, 2 };
     int i = majorityElement_HashMap(nums); // 2
-    // System.out.println(i);
+    System.out.println(i);
   }
 
   // Boyer-Boore Voting
