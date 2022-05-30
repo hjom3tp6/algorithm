@@ -19,20 +19,20 @@ public class Leetcode_15 {
       int left = i + 1;
       int right = nums.length - 1;
       while (left < right) {
-        if (nums[left] + nums[right] + nums[i] == 0) {
+        if (nums[i] + nums[left] + nums[right] == 0) {
           res.add(Arrays.asList(nums[i], nums[left], nums[right]));
-          do {
-            left++;
-          } while (left <= nums.length && nums[left] == nums[left - 1]);
-
-          do {
-            right--;
-          } while (right > i && nums[right] == nums[right + 1]);
-
-        } else if (nums[left] + nums[right] + nums[i] > 0) {
-          right--;
-        } else {
           left++;
+          right--;
+          while (left < nums.length && nums[left] == nums[left - 1]) {
+            left++;
+          }
+          while (right > i && nums[right] == nums[right + 1]) {
+            right--;
+          }
+        } else if (nums[i] + nums[left] + nums[right] < 0) {
+          left++;
+        } else {
+          right--;
         }
       }
     }
