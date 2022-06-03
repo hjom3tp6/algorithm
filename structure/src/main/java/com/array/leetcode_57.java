@@ -15,7 +15,7 @@ public class leetcode_57 {
         }
 
         // merge all overlapping intervals to one considering newInterval starts
-        while (i < intervals.length && newInterval[1] > intervals[i][0]) {
+        while (i < intervals.length && newInterval[1] >= intervals[i][0]) {
             // we could mutate newInterval here also
             newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
             newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
