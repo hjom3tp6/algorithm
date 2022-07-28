@@ -7,6 +7,7 @@ import java.util.Map;
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/
  */
 public class Leetcode_3 {
+  // use HashMap
   public int lengthOfLongestSubstring(String s) {
     Map<Character, Integer> map = new HashMap<>();
     int start = 0, len = 0;
@@ -19,5 +20,24 @@ public class Leetcode_3 {
         map.put(c, i);
     }
     return len;
+  }
+
+  // use array as map
+  public int lengthOfLongestSubstring_array(String s) {
+    if (s == null || s.length() < 1) return 0;
+    Integer[] chars = new Integer[128];
+    int left = 0, right = 0, maxLength = 0; 
+    int sLength = s.length();
+    while (right < sLength) {
+      char c = s.charAt(right); // declare key and value if use array, because it's very confused
+      Integer idx = chars[c];
+      if (idx!= null && idx>= left) {
+        left = chars[c] + 1;
+      }
+      maxLength = Math.max(maxLength, right - left + 1);
+      chars[c] = right;
+      right++;
+    }
+    return maxLength;
   }
 }
