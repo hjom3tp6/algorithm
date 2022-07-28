@@ -2,7 +2,8 @@ package com.string;
 
 public class Leetcode_5 {
   public static String longestPalindrome(String s) {
-    if (s == null || s.length() == 0) return "";
+    if (s == null || s.length() == 0)
+      return "";
     int start = 0, end = 0;
     for (int i = 0; i < s.length(); i++) {
       int len1 = getPalindromeLength(s, i, i);
@@ -15,6 +16,7 @@ public class Leetcode_5 {
     }
     return s.substring(start, end + 1);
   }
+
   private static int getPalindromeLength(String s, int left, int right) {
     int l = left;
     int r = right;

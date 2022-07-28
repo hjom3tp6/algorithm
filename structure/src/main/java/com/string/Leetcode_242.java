@@ -6,7 +6,8 @@ public class Leetcode_242 {
 
   // use Arrays.equals()
   public boolean isAnagram(String s, String t) {
-    if (s.length() != t.length()) return false;
+    if (s.length() != t.length())
+      return false;
     int[] sArray = new int[128];
     int[] tArray = new int[128];
     for (int i = 0; i < s.length(); i++) {
@@ -20,14 +21,15 @@ public class Leetcode_242 {
 
   // only one array needed
   public boolean isAnagram_2(String s, String t) {
-    if (s.length() != t.length()) return false;
+    if (s.length() != t.length())
+      return false;
     int[] count = new int[128];
     for (int i = 0; i < s.length(); i++) {
       count[s.charAt(i)]++;
       count[t.charAt(i)]--;
     }
     for (int i : count) {
-      if(i != 0) {
+      if (i != 0) {
         return false;
       }
     }
