@@ -3,6 +3,9 @@ package com.structure.linkedlist;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.algorithm.structure.linkedlist.Node;
+import com.algorithm.structure.linkedlist.SingleLinkedList;
+
 public class SingleLinkedListTest {
 
     SingleLinkedList list = new SingleLinkedList();

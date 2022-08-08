@@ -4,6 +4,8 @@ import static org.junit.Assume.assumeTrue;
 
 import org.junit.Test;
 
+import com.algorithm.structure.recursion.Factorial;
+
 public class FactorialTest {
 
     @Test

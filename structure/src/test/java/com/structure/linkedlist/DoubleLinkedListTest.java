@@ -3,6 +3,9 @@ package com.structure.linkedlist;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.algorithm.structure.linkedlist.DoubleLinkedList;
+import com.algorithm.structure.linkedlist.DoubleNode;
+
 public class DoubleLinkedListTest {
 
     DoubleLinkedList list = new DoubleLinkedList();

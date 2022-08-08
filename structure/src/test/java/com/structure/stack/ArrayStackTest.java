@@ -2,6 +2,8 @@ package com.structure.stack;
 
 import org.junit.Test;
 
+import com.algorithm.structure.stack.ArrayStack;
+
 public class ArrayStackTest {
     @Test
     public void pushTest() {
