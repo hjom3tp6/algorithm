@@ -3,7 +3,7 @@ package com.algorithm.binarySearch;
 /**
  * https://leetcode.com/problems/sqrtx/
  */
-public class Leetcode69 {
+public class Leetcode_69 {
 
   public static void main(String[] args) {
     // 0 <= x <= 2^31 - 1

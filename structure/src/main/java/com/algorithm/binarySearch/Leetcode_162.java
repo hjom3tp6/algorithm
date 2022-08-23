@@ -1,6 +1,6 @@
 package com.algorithm.binarySearch;
 
-public class Leetcode162 {
+public class Leetcode_162 {
 
   /**
    * https://leetcode.com/problems/find-peak-element/solution/
